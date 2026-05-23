@@ -1,0 +1,202 @@
+{
+  "schema": 1,
+  "app": "Lince Code Editor",
+  "releaseTag": "latest",
+  "assetNamePattern": "lince-stack-{key}-{abi}.zip",
+  "defaultAbiPriority": [
+    "arm64-v8a",
+    "x86_64",
+    "armeabi-v7a",
+    "x86"
+  ],
+  "stacks": [
+    {
+      "key": "python",
+      "name": "Python",
+      "version": "3.12.x",
+      "status": "ready",
+      "installable": true,
+      "iconResName": "ic_lang_python",
+      "fallbackIcon": "Py",
+      "assetPrefix": "lince-stack-python",
+      "description": "Scripts Python e pip."
+    },
+    {
+      "key": "node",
+      "name": "Node.js",
+      "version": "22.x LTS",
+      "status": "ready",
+      "installable": true,
+      "iconResName": "ic_lang_node",
+      "fallbackIcon": "JS",
+      "assetPrefix": "lince-stack-node",
+      "description": "Node, npm e npx."
+    },
+    {
+      "key": "github",
+      "name": "Git/GitHub",
+      "version": "Git 2.45.x",
+      "status": "ready",
+      "installable": true,
+      "iconResName": "ic_lang_github",
+      "fallbackIcon": "Git",
+      "assetPrefix": "lince-stack-github",
+      "description": "Git CLI."
+    },
+    {
+      "key": "curl",
+      "name": "Curl",
+      "version": "8.x",
+      "status": "ready",
+      "installable": true,
+      "iconResName": "ic_lang_android_tools",
+      "fallbackIcon": "curl",
+      "assetPrefix": "lince-stack-curl",
+      "description": "Cliente HTTP."
+    },
+    {
+      "key": "java",
+      "name": "Java",
+      "version": "JDK 21 LTS",
+      "status": "development",
+      "installable": false,
+      "iconResName": "ic_lang_java",
+      "fallbackIcon": "Java"
+    },
+    {
+      "key": "gradle",
+      "name": "Gradle",
+      "version": "8.x",
+      "status": "development",
+      "installable": false,
+      "iconResName": "ic_lang_gradle",
+      "fallbackIcon": "Gradle"
+    },
+    {
+      "key": "kotlin",
+      "name": "Kotlin",
+      "version": "2.x",
+      "status": "development",
+      "installable": false,
+      "iconResName": "ic_lang_kotlin",
+      "fallbackIcon": "Kt"
+    },
+    {
+      "key": "android_tools",
+      "name": "Android Tools",
+      "version": "AGP / build-tools",
+      "status": "development",
+      "installable": false,
+      "iconResName": "ic_lang_android_tools",
+      "fallbackIcon": "Android"
+    },
+    {
+      "key": "flutter",
+      "name": "Flutter",
+      "version": "3.x",
+      "status": "development",
+      "installable": false,
+      "iconResName": "ic_lang_flutter",
+      "fallbackIcon": "Fl"
+    },
+    {
+      "key": "dart",
+      "name": "Dart",
+      "version": "3.x",
+      "status": "development",
+      "installable": false,
+      "iconResName": "ic_lang_dart",
+      "fallbackIcon": "Dart"
+    },
+    {
+      "key": "typescript",
+      "name": "TypeScript",
+      "version": "5.x",
+      "status": "development",
+      "installable": false,
+      "iconResName": "ic_lang_ts",
+      "fallbackIcon": "TS"
+    },
+    {
+      "key": "c",
+      "name": "C",
+      "version": "LLVM/Clang 20.x",
+      "status": "development",
+      "installable": false,
+      "iconResName": "ic_lang_c",
+      "fallbackIcon": "C"
+    },
+    {
+      "key": "cpp",
+      "name": "C++",
+      "version": "LLVM/Clang 20.x",
+      "status": "development",
+      "installable": false,
+      "iconResName": "ic_lang_cpp",
+      "fallbackIcon": "C++"
+    },
+    {
+      "key": "csharp",
+      "name": "C#/.NET",
+      "version": ".NET SDK",
+      "status": "development",
+      "installable": false,
+      "iconResName": "ic_lang_c_sharp",
+      "fallbackIcon": "C#"
+    },
+    {
+      "key": "go",
+      "name": "Go",
+      "version": "1.22+",
+      "status": "development",
+      "installable": false,
+      "iconResName": "ic_lang_go",
+      "fallbackIcon": "Go"
+    },
+    {
+      "key": "rust",
+      "name": "Rust",
+      "version": "1.x",
+      "status": "development",
+      "installable": false,
+      "iconResName": "ic_lang_rust",
+      "fallbackIcon": "Rs"
+    },
+    {
+      "key": "ruby",
+      "name": "Ruby",
+      "version": "3.x",
+      "status": "development",
+      "installable": false,
+      "iconResName": "ic_lang_ruby",
+      "fallbackIcon": "Rb"
+    },
+    {
+      "key": "lua",
+      "name": "Lua",
+      "version": "5.4",
+      "status": "development",
+      "installable": false,
+      "iconResName": "ic_lang_lua",
+      "fallbackIcon": "Lua"
+    },
+    {
+      "key": "r",
+      "name": "R",
+      "version": "4.x",
+      "status": "development",
+      "installable": false,
+      "iconResName": "ic_lang_r",
+      "fallbackIcon": "R"
+    },
+    {
+      "key": "swift",
+      "name": "Swift",
+      "version": "6.x",
+      "status": "development",
+      "installable": false,
+      "iconResName": "ic_lang_swift",
+      "fallbackIcon": "Swift"
+    }
+  ]
+}
