@@ -1,7 +1,8 @@
 {
-  "schema": 2,
+  "schema": 3,
   "app": "Lince Code Editor",
   "releaseTag": "v1.0.0",
+  "defaultReleaseTag": "v1.0.0",
   "assetNamePattern": "lince-{type}-{key}-{abi}.zip",
   "defaultAbiPriority": [
     "arm64-v8a",
@@ -45,8 +46,8 @@
       "configurable": true,
       "auth": "api_key",
       "iconResName": "ic_agent_codex",
-      "fallbackIcon": "AI",
-      "description": "Agente para código e automações."
+      "fallbackIcon": "CX",
+      "description": "Agente de código para geração, edição e revisão."
     },
     {
       "key": "gemini",
@@ -58,275 +59,188 @@
       "auth": "api_key",
       "iconResName": "ic_agent_gemini",
       "fallbackIcon": "GM",
-      "description": "Modelo externo para assistência."
-    },
-    {
-      "key": "deepseek",
-      "name": "DeepSeek",
-      "provider": "DeepSeek",
-      "status": "development",
-      "installable": false,
-      "configurable": true,
-      "auth": "api_key",
-      "iconResName": "ic_agent_deepseek",
-      "fallbackIcon": "DS",
-      "description": "Modelo externo para código."
+      "description": "Assistência multimodal e análise de código."
     }
   ],
   "tools": [
     {
       "key": "git",
+      "type": "tool",
       "name": "Git",
       "version": "2.54.0",
       "status": "stable",
       "installable": true,
-      "iconResName": "icons8_git_128",
-      "fallbackIcon": "Git",
+      "releaseTag": "v1.0.0",
       "assetPrefix": "lince-tool-git",
-      "commands": ["git"],
+      "commands": [
+        "git"
+      ],
+      "requiredFiles": [
+        "bin/git"
+      ],
       "description": "Controle de versão local e remoto."
     },
     {
       "key": "github",
-      "name": "GitHub",
-      "version": "2.92.0",
+      "type": "tool",
+      "name": "GitHub CLI",
+      "version": "2.x",
       "status": "stable",
       "installable": true,
-      "iconResName": "ic_lang_github",
-      "fallbackIcon": "GH",
+      "releaseTag": "v1.0.0",
       "assetPrefix": "lince-tool-github",
-      "commands": ["gh"],
-      "description": "Integração com GitHub."
+      "commands": [
+        "gh"
+      ],
+      "requiredFiles": [
+        "bin/gh"
+      ],
+      "auth": "github_device_flow",
+      "description": "CLI oficial do GitHub para login, repositórios, releases e workflows."
     },
     {
       "key": "curl",
+      "type": "tool",
       "name": "Curl",
-      "version": "8.20.0",
+      "version": "8.x",
       "status": "stable",
       "installable": true,
-      "iconResName": "ic_lang_curl",
-      "fallbackIcon": "curl",
+      "releaseTag": "v0.2.0",
       "assetPrefix": "lince-tool-curl",
-      "commands": ["curl"],
-      "description": "Cliente HTTP para terminal."
-    },
-    {
-      "key": "android_tools",
-      "name": "Android Tools",
-      "version": "build-tools",
-      "status": "development",
-      "installable": false,
-      "iconResName": "ic_lang_android_tools",
-      "fallbackIcon": "ADT",
-      "assetPrefix": "lince-tool-android-tools",
-      "commands": ["aapt2", "zipalign", "apksigner"],
-      "description": "Ferramentas auxiliares para builds Android."
+      "commands": [
+        "curl"
+      ],
+      "requiredFiles": [
+        "bin/curl",
+        "etc/tls/cert.pem"
+      ],
+      "env": {
+        "SSL_CERT_FILE": "{runtime}/etc/tls/cert.pem",
+        "CURL_CA_BUNDLE": "{runtime}/etc/tls/cert.pem"
+      },
+      "description": "Cliente HTTP para terminal com suporte a HTTPS."
     }
   ],
   "stacks": [
     {
       "key": "python",
+      "type": "stack",
       "name": "Python",
-      "version": "3.13.13",
+      "version": "3.13",
       "status": "stable",
       "installable": true,
-      "iconResName": "ic_lang_python",
-      "fallbackIcon": "Py",
+      "releaseTag": "v1.0.0",
       "assetPrefix": "lince-stack-python",
-      "commands": ["python", "python3", "pip", "pip3"],
-      "description": "Scripts Python e pip."
+      "commands": [
+        "python",
+        "python3",
+        "pip",
+        "pip3"
+      ],
+      "requiredFiles": [
+        "bin/python"
+      ],
+      "env": {
+        "PYTHONHOME": "{runtime}",
+        "PYTHONPATH": "{runtime}/lib/python3.13/site-packages",
+        "PIP_CACHE_DIR": "{appCache}/pip",
+        "PYTHONNOUSERSITE": "1"
+      },
+      "description": "Runtime Python com pip para scripts e automações."
     },
     {
       "key": "node",
+      "type": "stack",
       "name": "Node.js",
-      "version": "22.x LTS",
+      "version": "22.x",
       "status": "stable",
       "installable": true,
-      "iconResName": "ic_lang_node",
-      "fallbackIcon": "JS",
+      "releaseTag": "v0.2.0",
       "assetPrefix": "lince-stack-node",
-      "commands": ["node", "npm", "npx"],
-      "description": "Node, npm e npx."
+      "commands": [
+        "node",
+        "npm",
+        "npx"
+      ],
+      "requiredFiles": [
+        "bin/node",
+        "bin/npm",
+        "bin/npx",
+        "lib/node_modules/npm/bin/npm-cli.js",
+        "lib/node_modules/npm/bin/npx-cli.js"
+      ],
+      "env": {
+        "NODE_PATH": "{runtime}/lib/node_modules",
+        "NPM_CONFIG_PREFIX": "{runtime}",
+        "NPM_CONFIG_CACHE": "{appCache}/npm"
+      },
+      "description": "Runtime JavaScript com npm e npx."
     },
     {
       "key": "go",
+      "type": "stack",
       "name": "Go",
-      "version": "1.22+",
+      "version": "1.x",
       "status": "stable",
       "installable": true,
-      "iconResName": "ic_lang_go",
-      "fallbackIcon": "Go",
+      "releaseTag": "v0.2.0",
       "assetPrefix": "lince-stack-go",
-      "commands": ["go"],
-      "description": "Go toolchain."
-    },
-    {
-      "key": "ruby",
-      "name": "Ruby",
-      "version": "3.x",
-      "status": "stable",
-      "installable": true,
-      "iconResName": "ic_lang_ruby",
-      "fallbackIcon": "Rb",
-      "assetPrefix": "lince-stack-ruby",
-      "commands": ["ruby", "gem"],
-      "description": "Runtime Ruby."
+      "commands": [
+        "go",
+        "gofmt"
+      ],
+      "requiredFiles": [
+        "bin/go",
+        "bin/gofmt",
+        "lib/go"
+      ],
+      "env": {
+        "GOROOT": "{runtime}/lib/go",
+        "GOPATH": "{appFiles}/go",
+        "GOCACHE": "{appCache}/go-build",
+        "GOMODCACHE": "{appFiles}/go/pkg/mod"
+      },
+      "description": "Go toolchain para compilar e executar projetos Go."
     },
     {
       "key": "lua",
+      "type": "stack",
       "name": "Lua",
       "version": "5.4",
       "status": "stable",
       "installable": true,
-      "iconResName": "ic_lang_lua",
-      "fallbackIcon": "Lua",
+      "releaseTag": "v1.0.0",
       "assetPrefix": "lince-stack-lua",
-      "commands": ["lua"],
-      "description": "Runtime Lua."
+      "commands": [
+        "lua",
+        "lua5.4"
+      ],
+      "requiredFiles": [
+        "bin/lua"
+      ],
+      "description": "Runtime Lua leve para scripts."
     },
     {
-      "key": "java",
-      "name": "Java",
-      "version": "JDK 21 LTS",
-      "status": "development",
-      "installable": false,
-      "iconResName": "ic_lang_java",
-      "fallbackIcon": "Java",
-      "assetPrefix": "lince-stack-java",
-      "commands": ["java", "javac"],
-      "description": "Runtime e compilador Java."
-    },
-    {
-      "key": "gradle",
-      "name": "Gradle",
-      "version": "8.x",
-      "status": "development",
-      "installable": false,
-      "iconResName": "ic_lang_gradle",
-      "fallbackIcon": "Gradle",
-      "assetPrefix": "lince-stack-gradle",
-      "commands": ["gradle"],
-      "description": "Build system para JVM e Android."
-    },
-    {
-      "key": "kotlin",
-      "name": "Kotlin",
-      "version": "2.x",
-      "status": "development",
-      "installable": false,
-      "iconResName": "ic_lang_kotlin",
-      "fallbackIcon": "Kt",
-      "assetPrefix": "lince-stack-kotlin",
-      "commands": ["kotlinc", "kotlin"],
-      "description": "Compilador Kotlin."
-    },
-    {
-      "key": "flutter",
-      "name": "Flutter",
+      "key": "ruby",
+      "type": "stack",
+      "name": "Ruby",
       "version": "3.x",
-      "status": "development",
-      "installable": false,
-      "iconResName": "ic_lang_flutter",
-      "fallbackIcon": "Fl",
-      "assetPrefix": "lince-stack-flutter",
-      "commands": ["flutter"],
-      "description": "SDK Flutter."
-    },
-    {
-      "key": "dart",
-      "name": "Dart",
-      "version": "3.x",
-      "status": "development",
-      "installable": false,
-      "iconResName": "ic_lang_dart",
-      "fallbackIcon": "Dart",
-      "assetPrefix": "lince-stack-dart",
-      "commands": ["dart"],
-      "description": "SDK Dart."
-    },
-    {
-      "key": "typescript",
-      "name": "TypeScript",
-      "version": "5.x",
-      "status": "development",
-      "installable": false,
-      "iconResName": "ic_lang_ts",
-      "fallbackIcon": "TS",
-      "assetPrefix": "lince-stack-typescript",
-      "commands": ["tsc"],
-      "description": "TypeScript compiler."
-    },
-    {
-      "key": "c",
-      "name": "C",
-      "version": "LLVM/Clang 20.x",
-      "status": "development",
-      "installable": false,
-      "iconResName": "ic_lang_c",
-      "fallbackIcon": "C",
-      "assetPrefix": "lince-stack-c",
-      "commands": ["clang", "cc"],
-      "description": "Compilador C."
-    },
-    {
-      "key": "cpp",
-      "name": "C++",
-      "version": "LLVM/Clang 20.x",
-      "status": "development",
-      "installable": false,
-      "iconResName": "ic_lang_cpp",
-      "fallbackIcon": "C++",
-      "assetPrefix": "lince-stack-cpp",
-      "commands": ["clang++", "c++"],
-      "description": "Compilador C++."
-    },
-    {
-      "key": "csharp",
-      "name": "C#/.NET",
-      "version": ".NET SDK",
-      "status": "development",
-      "installable": false,
-      "iconResName": "ic_lang_c_sharp",
-      "fallbackIcon": "C#",
-      "assetPrefix": "lince-stack-csharp",
-      "commands": ["dotnet"],
-      "description": "SDK .NET."
-    },
-    {
-      "key": "rust",
-      "name": "Rust",
-      "version": "1.x",
-      "status": "development",
-      "installable": false,
-      "iconResName": "ic_lang_rust",
-      "fallbackIcon": "Rs",
-      "assetPrefix": "lince-stack-rust",
-      "commands": ["rustc", "cargo"],
-      "description": "Rust compiler e Cargo."
-    },
-    {
-      "key": "r",
-      "name": "R",
-      "version": "4.x",
-      "status": "development",
-      "installable": false,
-      "iconResName": "ic_lang_r",
-      "fallbackIcon": "R",
-      "assetPrefix": "lince-stack-r",
-      "commands": ["R", "Rscript"],
-      "description": "Runtime R."
-    },
-    {
-      "key": "swift",
-      "name": "Swift",
-      "version": "6.x",
-      "status": "development",
-      "installable": false,
-      "iconResName": "ic_lang_swift",
-      "fallbackIcon": "Swift",
-      "assetPrefix": "lince-stack-swift",
-      "commands": ["swift", "swiftc"],
-      "description": "Compilador Swift."
+      "status": "stable",
+      "installable": true,
+      "releaseTag": "v1.0.0",
+      "assetPrefix": "lince-stack-ruby",
+      "commands": [
+        "ruby",
+        "gem"
+      ],
+      "requiredFiles": [
+        "bin/ruby"
+      ],
+      "env": {
+        "GEM_HOME": "{appFiles}/gems",
+        "GEM_PATH": "{appFiles}/gems"
+      },
+      "description": "Runtime Ruby com suporte a scripts e gems."
     }
   ]
 }
