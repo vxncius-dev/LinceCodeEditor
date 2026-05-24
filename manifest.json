@@ -1,7 +1,7 @@
 {
   "schema": 2,
   "app": "Lince Code Editor",
-  "releaseTag": "latest",
+  "releaseTag": "v1.0.0",
   "assetNamePattern": "lince-{type}-{key}-{abi}.zip",
   "defaultAbiPriority": [
     "arm64-v8a",
@@ -77,9 +77,9 @@
     {
       "key": "git",
       "name": "Git",
-      "version": "2.x",
-      "status": "development",
-      "installable": false,
+      "version": "2.54.0",
+      "status": "stable",
+      "installable": true,
       "iconResName": "icons8_git_128",
       "fallbackIcon": "Git",
       "assetPrefix": "lince-tool-git",
@@ -89,9 +89,9 @@
     {
       "key": "github",
       "name": "GitHub",
-      "version": "CLI",
-      "status": "development",
-      "installable": false,
+      "version": "2.92.0",
+      "status": "stable",
+      "installable": true,
       "iconResName": "ic_lang_github",
       "fallbackIcon": "GH",
       "assetPrefix": "lince-tool-github",
@@ -101,9 +101,9 @@
     {
       "key": "curl",
       "name": "Curl",
-      "version": "8.x",
-      "status": "development",
-      "installable": false,
+      "version": "8.20.0",
+      "status": "stable",
+      "installable": true,
       "iconResName": "ic_lang_curl",
       "fallbackIcon": "curl",
       "assetPrefix": "lince-tool-curl",
@@ -127,9 +127,9 @@
     {
       "key": "python",
       "name": "Python",
-      "version": "3.12.x",
-      "status": "development",
-      "installable": false,
+      "version": "3.13.13",
+      "status": "stable",
+      "installable": true,
       "iconResName": "ic_lang_python",
       "fallbackIcon": "Py",
       "assetPrefix": "lince-stack-python",
@@ -140,13 +140,49 @@
       "key": "node",
       "name": "Node.js",
       "version": "22.x LTS",
-      "status": "development",
-      "installable": false,
+      "status": "stable",
+      "installable": true,
       "iconResName": "ic_lang_node",
       "fallbackIcon": "JS",
       "assetPrefix": "lince-stack-node",
       "commands": ["node", "npm", "npx"],
       "description": "Node, npm e npx."
+    },
+    {
+      "key": "go",
+      "name": "Go",
+      "version": "1.22+",
+      "status": "stable",
+      "installable": true,
+      "iconResName": "ic_lang_go",
+      "fallbackIcon": "Go",
+      "assetPrefix": "lince-stack-go",
+      "commands": ["go"],
+      "description": "Go toolchain."
+    },
+    {
+      "key": "ruby",
+      "name": "Ruby",
+      "version": "3.x",
+      "status": "stable",
+      "installable": true,
+      "iconResName": "ic_lang_ruby",
+      "fallbackIcon": "Rb",
+      "assetPrefix": "lince-stack-ruby",
+      "commands": ["ruby", "gem"],
+      "description": "Runtime Ruby."
+    },
+    {
+      "key": "lua",
+      "name": "Lua",
+      "version": "5.4",
+      "status": "stable",
+      "installable": true,
+      "iconResName": "ic_lang_lua",
+      "fallbackIcon": "Lua",
+      "assetPrefix": "lince-stack-lua",
+      "commands": ["lua"],
+      "description": "Runtime Lua."
     },
     {
       "key": "java",
@@ -257,18 +293,6 @@
       "description": "SDK .NET."
     },
     {
-      "key": "go",
-      "name": "Go",
-      "version": "1.22+",
-      "status": "development",
-      "installable": false,
-      "iconResName": "ic_lang_go",
-      "fallbackIcon": "Go",
-      "assetPrefix": "lince-stack-go",
-      "commands": ["go"],
-      "description": "Go toolchain."
-    },
-    {
       "key": "rust",
       "name": "Rust",
       "version": "1.x",
@@ -279,30 +303,6 @@
       "assetPrefix": "lince-stack-rust",
       "commands": ["rustc", "cargo"],
       "description": "Rust compiler e Cargo."
-    },
-    {
-      "key": "ruby",
-      "name": "Ruby",
-      "version": "3.x",
-      "status": "development",
-      "installable": false,
-      "iconResName": "ic_lang_ruby",
-      "fallbackIcon": "Rb",
-      "assetPrefix": "lince-stack-ruby",
-      "commands": ["ruby", "gem"],
-      "description": "Runtime Ruby."
-    },
-    {
-      "key": "lua",
-      "name": "Lua",
-      "version": "5.4",
-      "status": "development",
-      "installable": false,
-      "iconResName": "ic_lang_lua",
-      "fallbackIcon": "Lua",
-      "assetPrefix": "lince-stack-lua",
-      "commands": ["lua"],
-      "description": "Runtime Lua."
     },
     {
       "key": "r",
