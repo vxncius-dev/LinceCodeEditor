@@ -60,7 +60,7 @@
   "iconResName": "ic_agent_copilot",
   "fallbackIcon": "CP",
   "description": "Assistência de código integrada ao GitHub Copilot."
-    }
+    },
     {
       "key": "gemini",
       "name": "Gemini",
@@ -84,6 +84,31 @@
       "iconResName": "ic_agent_deepseek",
       "fallbackIcon": "DS",
       "description": "Modelo externo para código."
+    },
+    {
+  "key": "manus",
+  "name": "Manus",
+  "provider": "Manus",
+  "status": "development",
+  "installable": false,
+  "configurable": true,
+  "auth": "api_key",
+  "iconResName": "ic_agent_manus",
+  "fallbackIcon": "MS",
+  "description": "Agente autônomo para executar tarefas, automações e entregas completas."
+    },
+    {
+  "key": "ollama",
+  "name": "Ollama",
+  "provider": "Ollama",
+  "status": "development",
+  "installable": false,
+  "configurable": true,
+  "auth": "local_endpoint",
+  "iconResName": "ic_agent_ollama",
+  "fallbackIcon": "OL",
+  "baseUrl": "http://127.0.0.1:11434/api",
+  "description": "Provider local para modelos abertos via API compatível com Ollama."
     }
   ],
   "tools": [
