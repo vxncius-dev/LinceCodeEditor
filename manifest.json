@@ -191,6 +191,22 @@
         "apksigner"
       ],
       "description": "Ferramentas auxiliares para builds Android."
+    },
+    {
+      "key": "gradle",
+      "type": "tool",
+      "name": "Gradle",
+      "version": "8.x",
+      "status": "development",
+      "installable": false,
+      "releaseTag": "v1.0.0",
+      "iconResName": "ic_lang_gradle",
+      "fallbackIcon": "Gradle",
+      "assetPrefix": "lince-stack-gradle",
+      "commands": [
+        "gradle"
+      ],
+      "description": "Build system para JVM e Android."
     }
   ],
   "stacks": [
@@ -340,22 +356,6 @@
         "javac"
       ],
       "description": "Runtime e compilador Java."
-    },
-    {
-      "key": "gradle",
-      "type": "stack",
-      "name": "Gradle",
-      "version": "8.x",
-      "status": "development",
-      "installable": false,
-      "releaseTag": "v1.0.0",
-      "iconResName": "ic_lang_gradle",
-      "fallbackIcon": "Gradle",
-      "assetPrefix": "lince-stack-gradle",
-      "commands": [
-        "gradle"
-      ],
-      "description": "Build system para JVM e Android."
     },
     {
       "key": "kotlin",
