@@ -1,4 +1,4 @@
-{
+lo{
   "schema": 3,
   "app": "Lince Code Editor",
   "releaseTag": "v1.0.0",
@@ -120,7 +120,7 @@
       "status": "stable",
       "installable": true,
       "releaseTag": "v1.0.0",
-      "iconResName": "icons8_git_128",
+      "iconResName": "ic_tool_git",
       "fallbackIcon": "Git",
       "assetPrefix": "lince-tool-git",
       "commands": [
@@ -139,7 +139,7 @@
       "status": "stable",
       "installable": true,
       "releaseTag": "v1.0.0",
-      "iconResName": "ic_lang_github",
+      "iconResName": "ic_tool_github",
       "fallbackIcon": "GH",
       "assetPrefix": "lince-tool-github",
       "commands": [
@@ -159,7 +159,7 @@
       "status": "stable",
       "installable": true,
       "releaseTag": "v2.0.0",
-      "iconResName": "ic_lang_curl",
+      "iconResName": "ic_tool_curl",
       "fallbackIcon": "curl",
       "assetPrefix": "lince-tool-curl",
       "commands": [
@@ -182,7 +182,7 @@
       "version": "build-tools",
       "status": "development",
       "installable": false,
-      "iconResName": "ic_lang_android_tools",
+      "iconResName": "ic_tool_android_tools",
       "fallbackIcon": "ADT",
       "assetPrefix": "lince-tool-android-tools",
       "commands": [
@@ -200,9 +200,9 @@
       "status": "development",
       "installable": false,
       "releaseTag": "v1.0.0",
-      "iconResName": "ic_lang_gradle",
+      "iconResName": "ic_tool_gradle",
       "fallbackIcon": "Gradle",
-      "assetPrefix": "lince-stack-gradle",
+      "assetPrefix": "lince-tool-gradle",
       "commands": [
         "gradle"
       ],
