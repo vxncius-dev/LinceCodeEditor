@@ -226,7 +226,7 @@
       "key": "node",
       "type": "stack",
       "name": "Node.js",
-      "version": "22.x",
+      "version": "v26.2.0",
       "status": "stable",
       "installable": true,
       "releaseTag": "v3.0.0",
