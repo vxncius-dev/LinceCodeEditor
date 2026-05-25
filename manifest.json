@@ -361,7 +361,7 @@
       "key": "kotlin",
       "type": "stack",
       "name": "Kotlin",
-      "version": "2.x",
+      "version": "2.3.21",
       "status": "stable",
       "installable": true,
       "releaseTag": "v3.0.0",
