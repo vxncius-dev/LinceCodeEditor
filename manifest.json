@@ -229,7 +229,7 @@
       "version": "22.x",
       "status": "stable",
       "installable": true,
-      "releaseTag": "v2.0.0",
+      "releaseTag": "v3.0.0",
       "iconResName": "ic_lang_node",
       "fallbackIcon": "JS",
       "assetPrefix": "lince-stack-node",
@@ -405,22 +405,6 @@
         "dart"
       ],
       "description": "SDK Dart."
-    },
-    {
-      "key": "typescript",
-      "type": "stack",
-      "name": "TypeScript",
-      "version": "5.x",
-      "status": "development",
-      "installable": false,
-      "releaseTag": "v3.0.0",
-      "iconResName": "ic_lang_ts",
-      "fallbackIcon": "TS",
-      "assetPrefix": "lince-stack-typescript",
-      "commands": [
-        "tsc"
-      ],
-      "description": "TypeScript compiler."
     },
     {
       "key": "c",
