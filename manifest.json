@@ -477,7 +477,7 @@
       "key": "r",
       "type": "stack",
       "name": "R",
-      "version": "4.x",
+      "version": "4.5.3",
       "status": "stable",
       "installable": true,
       "releaseTag": "v3.0.0",
