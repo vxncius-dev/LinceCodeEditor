@@ -507,6 +507,48 @@
         "swiftc"
       ],
       "description": "Compilador Swift."
-    }
+    },
+    {
+  "key": "sdl2",
+  "type": "extension",
+  "name": "SDL2",
+  "version": "2.x",
+  "status": "development",
+  "installable": false,
+  "releaseTag": "v7.0.0",
+  "iconResName": "ic_extension_sdl2",
+  "fallbackIcon": "SDL",
+  "assetPrefix": "lince-extension-sdl2",
+  "commands": ["sdl2-config"],
+  "description": "Jogos, janelas, áudio e input para C/C++."
+},
+{
+  "key": "cmake_ninja",
+  "type": "extension",
+  "name": "CMake + Ninja",
+  "version": "3.x / 1.x",
+  "status": "development",
+  "installable": false,
+  "releaseTag": "v7.0.0",
+  "iconResName": "ic_extension_buildtools",
+  "fallbackIcon": "Build",
+  "assetPrefix": "lince-extension-cmake-ninja",
+  "commands": ["cmake", "ninja"],
+  "description": "Build system para projetos nativos maiores."
+},
+{
+  "key": "opengles",
+  "type": "extension",
+  "name": "OpenGL ES helpers",
+  "version": "3.x",
+  "status": "development",
+  "installable": false,
+  "releaseTag": "v7.0.0",
+  "iconResName": "ic_extension_opengles",
+  "fallbackIcon": "GL",
+  "assetPrefix": "lince-extension-opengles",
+  "commands": [],
+  "description": "Base gráfica para protótipos nativos no Android."
+}
   ]
 }
